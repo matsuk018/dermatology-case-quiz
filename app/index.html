@@ -23,6 +23,18 @@
         <span id="pool-progress" class="progress" aria-label="症例プール"></span>
       </header>
 
+      <nav class="view-nav" aria-label="クイズ画面">
+        <button id="today-tab" class="nav-button" type="button" aria-pressed="true">本日の問題</button>
+        <button id="archive-tab" class="nav-button" type="button" aria-pressed="false">過去の問題</button>
+      </nav>
+
+      <section id="archive-screen" class="archive-screen" hidden aria-labelledby="archive-title">
+        <h2 id="archive-title" tabindex="-1">過去の問題</h2>
+        <p class="archive-intro">これまでに出題した問題です。診断名は回答後に表示します。</p>
+        <ol id="archive-list" class="archive-list"></ol>
+        <p id="archive-empty" class="archive-empty" hidden>過去の問題はまだありません。</p>
+      </section>
+
       <section id="quiz-screen" aria-labelledby="screen-title">
         <figure class="case-image">
           <img id="case-image" src="" alt="" width="602" height="452" />
@@ -81,7 +93,7 @@
         </section>
 
         <button class="primary-button reset-button" id="reset-quiz" type="button">同じ問題をもう一度</button>
-        <p class="tomorrow-note">次の問題は日本時間の0時に切り替わります。</p>
+        <p id="schedule-note" class="tomorrow-note">次の問題は日本時間の0時に切り替わります。</p>
       </section>
 
       <footer class="app-footer">
