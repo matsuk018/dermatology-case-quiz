@@ -4,8 +4,9 @@
 
 ## 現在地
 
-- 2026-07-18: プロジェクトの骨組みを作成
-- 実装前。まず専用のCodexチャットで手動MVPを設計する
+- 2026-07-18: 30症例の4択式日替わりPWAを実装
+- JAAD Case ReportsのCC BY 4.0症例30件を検証・収録済み
+- GitHub Pagesの自動公開ワークフローを追加済み（GitHub接続・初回公開は未実施）
 - 初回出題形式は `docs/dermatology_case_quiz_handoff_v2.md` の第16節を正とする
 
 ## 最初に読むもの
@@ -21,13 +22,16 @@
 - `search_log.md`: 候補、除外理由、検証結果
 - `prompts/daily_case_search.md`: 初回出題用プロンプト
 - `prompts/answer_reveal.md`: 回答後の開示用プロンプト
+- `app/`: iPhone対応の日替わり4択Webアプリ
+- `scripts/validate-cases.mjs`: 公開前の症例データ検査
+- `.github/workflows/pages.yml`: GitHub Pages自動公開
 - `docs/`: 引き継ぎ仕様と設計判断
 
 ## 推奨する進め方
 
-1. まず1問を手動で探索・検証・出題する
-2. 出題と回答後開示の品質を数回確認する
-3. 画像ライセンスと表示方法を決める
-4. その後に毎日20:00の自動化と通知方法を設計する
+1. GitHubリポジトリを作成してこのフォルダを接続する
+2. GitHub PagesのSourceを `GitHub Actions` に設定する
+3. iPhoneでホーム画面追加とオフライン表示を確認する
+4. 残数が少なくなる前に、同じ検証基準で症例プールを補充する
 
-コード、依存関係、配信方式はまだ決めていません。実運用を試す前に作り込みすぎない方針です。
+公開症例のみを使用し、大学認証、購読PDF、ユーザーの患者資料は扱いません。

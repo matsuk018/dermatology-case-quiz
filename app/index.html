@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0d0e" />
+    <meta name="description" content="公開症例から毎日1問を出題する個人学習用皮膚科クイズ" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="皮膚科クイズ" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/app-icon.svg" type="image/svg+xml" />
+    <title>本日の皮膚科クイズ</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">DAILY DERMATOLOGY</p>
+          <h1 id="screen-title">本日の皮膚科クイズ</h1>
+        </div>
+        <span id="pool-progress" class="progress" aria-label="症例プール"></span>
+      </header>
+
+      <section id="quiz-screen" aria-labelledby="screen-title">
+        <figure class="case-image">
+          <img id="case-image" src="" alt="" width="602" height="452" />
+          <figcaption>
+            公開論文のCC BY 4.0画像です。著者・出典は回答後に表示します。
+          </figcaption>
+        </figure>
+
+        <p id="case-summary" class="case-summary"></p>
+
+        <form id="answer-form" class="answer-form">
+          <fieldset>
+            <legend>これは何でしょう？</legend>
+            <div id="choice-list" class="choice-list"></div>
+          </fieldset>
+          <button class="primary-button" id="submit-answer" type="submit" disabled>回答する</button>
+          <button class="text-button" id="show-answer" type="button">答えを見る</button>
+        </form>
+      </section>
+
+      <section id="reveal-screen" class="reveal-screen" hidden aria-labelledby="reveal-title">
+        <p id="result-label" class="result-label" aria-live="polite"></p>
+        <h2 id="reveal-title" tabindex="-1">答えと解説</h2>
+
+        <section class="answer-lead" aria-labelledby="diagnosis-heading">
+          <h3 id="diagnosis-heading">診断</h3>
+          <p id="diagnosis-text"></p>
+        </section>
+
+        <section class="explanation-section">
+          <h3>根拠</h3>
+          <p id="grounds-text"></p>
+        </section>
+
+        <section class="explanation-section">
+          <h3>鑑別のポイント</h3>
+          <p id="differential-text"></p>
+        </section>
+
+        <section class="explanation-section">
+          <h3>今回の学び</h3>
+          <p id="learning-text"></p>
+        </section>
+
+        <section class="explanation-section source-section">
+          <h3>画像クレジット・出典</h3>
+          <p id="source-authors" class="translated-title"></p>
+          <p lang="en"><cite id="source-title"></cite></p>
+          <p>JAAD Case Reports、2026年、CC BY 4.0（画像は未加工）</p>
+          <div class="source-links">
+            <a id="source-pmc" target="_blank" rel="noreferrer">PMC全文</a>
+            <a id="source-pubmed" target="_blank" rel="noreferrer">PubMed</a>
+            <a id="source-doi" target="_blank" rel="noreferrer">DOI</a>
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">ライセンス</a>
+          </div>
+        </section>
+
+        <button class="primary-button reset-button" id="reset-quiz" type="button">同じ問題をもう一度</button>
+        <p class="tomorrow-note">次の問題は日本時間の0時に切り替わります。</p>
+      </section>
+
+      <footer class="app-footer">
+        <span id="today-label"></span>
+        <span>30症例プール</span>
+      </footer>
+    </main>
+
+    <script src="./data/cases.js"></script>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "本日の皮膚科クイズ",
+  "short_name": "皮膚科クイズ",
+  "description": "画像付き皮膚科症例を考える、個人学習用クイズ",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0b0d0e",
+  "theme_color": "#0b0d0e",
+  "icons": [
+    {
+      "src": "./assets/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

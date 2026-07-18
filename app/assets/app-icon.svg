@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">皮膚科クイズ</title>
+  <rect width="512" height="512" rx="112" fill="#0b0d0e"/>
+  <circle cx="256" cy="256" r="164" fill="none" stroke="#58c1c2" stroke-width="28"/>
+  <path d="M214 174c0-28 20-48 48-48 30 0 52 20 52 48 0 33-19 43-41 57-18 11-25 23-25 45" fill="none" stroke="#f4f6f6" stroke-width="34" stroke-linecap="round"/>
+  <circle cx="248" cy="344" r="20" fill="#f4f6f6"/>
+</svg>
